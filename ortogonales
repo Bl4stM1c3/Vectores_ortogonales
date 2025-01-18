@@ -1,0 +1,18 @@
+#Posible solucion al ejercicio 28 de https://retosdeprogramacion.com/ejercicios
+#Crea un programa que determine si dos vectores son ortogonales.
+# * - Los dos array deben tener la misma longitud.
+# * - Cada vector se podría representar como un array. Ejemplo: [1, -2]
+#
+
+def vectores_ortogonales(v1, v2):
+    #Comprobamos que los vectores son de la misma dimension (longitud)
+    if len(v1) != len(v2):
+        return f"Los vectores {v1} y {v2} no tienen la misma dimension"
+    else:
+        #Para resolver el producto escalar de 2 vectores, mediante comprension de listas, se emplean:
+        #metodos zip() para multiplicar los elementos de ambos arrays 
+        #y el metodo sum() para sumar los elementos del array resultante        
+        if sum([a*b for a,b in zip(v1, v2)]) == 0:
+            return f"Los vectores {v1} y {v2} son ortogonales"
+        else:
+            return f"Los vectores {v1} y {v2} NO son ortogonales"
